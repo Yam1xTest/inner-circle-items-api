@@ -11,7 +11,7 @@ on:
 
 jobs: 
   build-amd64:
-    runs-on: [self-hosted, 4gb, 4cpu, gpu, amd64] 
+    runs-on: [self-hosted, ubuntu24.04, 4gb, 4cpu, gpu, amd64] 
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
