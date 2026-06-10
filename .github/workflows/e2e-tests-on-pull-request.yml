@@ -13,7 +13,7 @@ jobs:
   #   uses: ./.github/workflows/.reusable-docker-build-and-push.yml
 
   e2e-test-against-local-env:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     # needs: [docker-build-and-push]
     steps:
       - name: Checkout local-env
@@ -72,7 +72,7 @@ jobs:
           "SHOULD_USE_FAKE_EXTERNAL_DEPENDENCIES": "false"
 
   e2e-karate-tests-in-docker-compose:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
     - name: Run service via docker-compose and run Karate-tests
