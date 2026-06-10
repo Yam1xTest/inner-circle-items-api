@@ -13,6 +13,16 @@ jobs:
   build-amd64:
     runs-on: self-hosted
     steps:
+      - name: Debug docker permissions
+        run: |
+          whoami
+          id
+          groups
+          ls -l /var/run/docker.sock
+          stat -c '%U %G %a %n' /var/run/docker.sock
+          docker version
+          docker ps
+    
       - name: Check out the repo
         uses: actions/checkout@v4
 
